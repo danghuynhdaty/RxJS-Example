@@ -76,7 +76,7 @@ export class MapOperators {
 
 
   /** switchMap
-   * switchMap is the combination of map and switchMap
+   * switchMap is the combination of map and switchAll
    */
   public switchMapOperator() {
     console.log('Use swtich Map operator');
