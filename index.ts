@@ -1,9 +1,9 @@
-import { MapOperators } from './map-operators';
-import {SwitchMapUseCase} from './switchMap.usecase';
+import { MapOperators } from './Operators/mergeMap.usecase';
+import { SwitchMapOperator } from './Operators/switchMap.usecase';
+import { ConcatMapOperator } from './Operators/concatMap.usecase';
 
+// const switchMap = new SwitchMapOperator();
+// switchMap.executting();
 
-// const mapOperators = new MapOperators();
-// mapOperators.executting();
-
-const swithMap = new SwitchMapUseCase();
-swithMap.useSwichMap();
+const concatMap = new ConcatMapOperator();
+concatMap.executting();
