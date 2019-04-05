@@ -52,7 +52,7 @@ export class MapOperators {
     ).subscribe(data => console.log(data));
   }
 
-  /** MANNER #1
+  /** MANNER #2
    * We can use mergeMap as the best solution
    */
   public mergeMapOperator() {
@@ -60,5 +60,39 @@ export class MapOperators {
     this.data$.pipe(
       mergeMap(param => this.getData(param))
     ).subscribe(data => console.log(data));
+  }
+
+  /** switchAll
+   * switchAll cancel all previous subscrition and
+   * subscribes the last one
+   */
+  public swithAllOperator() {
+    console.log('Use switchAll operator');
+    this.data$.pipe(
+      map(param => this.getData(param)),
+      switchAll()
+    ).subscribe(data => console.log(data));
+  }
+
+
+  /** switchMap
+   * switchMap is the combination of map and switchMap
+   */
+  public switchMapOperator() {
+    console.log('Use swtich Map operator');
+    this.data$.pipe(
+      switchMap(param => this.getData(param))
+    ).subscribe(data => console.log(data));
+  }
+
+  /**
+   * Execute examples
+   */
+  public executting() {
+    // this.mapOperator();
+    // this.mergeAllOperator();
+    // this.mergeMapOperator();
+    this.swithAllOperator();
+    this.switchMapOperator();
   }
 }
